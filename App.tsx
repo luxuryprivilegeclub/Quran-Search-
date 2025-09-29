@@ -13,7 +13,7 @@ import { HomePage } from './components/HomePage';
 
 const App: React.FC = () => {
     const [page, setPage] = useState<'home' | 'search'>('home');
-    const [query, setQuery] = useState<string>('Al-Fatihah 1-7');
+    const [query, setQuery] = useState<string>('2:5');
     const [history, setHistory] = useState<string[]>(getHistory());
     
     const [result, setResult] = useState<FormattedResult | null>(null);

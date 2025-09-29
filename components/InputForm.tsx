@@ -21,7 +21,7 @@ export const InputForm: React.FC<InputFormProps> = ({ query, setQuery, onSubmit,
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    placeholder='e.g., "Al-Baqarah 255" or "2:255"'
+                    placeholder='Enter Surah:Ayah, e.g., 2:255 or Al-Baqarah 255'
                     className="w-full bg-gray-700 border-2 border-gray-600 rounded-md py-3 pl-4 pr-10 text-white focus:outline-none focus:border-yellow-500 transition-colors"
                     disabled={isLoading}
                     aria-label="Surah and Ayah"
