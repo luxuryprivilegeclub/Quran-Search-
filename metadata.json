@@ -1,0 +1,5 @@
+{
+  "name": "Quran Ayah Fetcher",
+  "description": "An application to fetch and display specific Quranic verses (ayahs) with their Urdu translations. It can also generate a beautifully formatted high-resolution image of the result with an Islamic-style background.",
+  "requestFramePermissions": []
+}
