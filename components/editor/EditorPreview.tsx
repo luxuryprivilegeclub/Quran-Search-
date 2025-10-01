@@ -20,7 +20,7 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
         <div 
             ref={ref} 
             style={{ 
-                width: '2048px', 
+                width: '1152px', 
                 height: '2048px',
                 backgroundImage: compositeBackgroundImage,
                 backgroundSize: 'cover',
@@ -29,10 +29,10 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
             className="overflow-hidden transition-all duration-300"
         >
              <div
-                className="w-full h-full text-white flex flex-col items-center p-24"
+                className="w-full h-full text-white flex flex-col items-center py-32 px-24"
             >
                 {/* Bismillah */}
-                <div className="text-center mb-12">
+                <div className="text-center mb-16">
                     <p className="font-amiri whitespace-nowrap" style={{ fontSize: '70px', color: INFO_COLOR }}>
                         بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                     </p>
@@ -41,14 +41,14 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
                 {/* Main Content Wrapper */}
                 <div className="flex flex-col items-center w-full">
                     {/* Surah Info */}
-                    <div className="text-center mb-12 w-full">
+                    <div className="text-center mb-16 w-full">
                         <h2 className="font-bold font-amiri" style={{ fontSize: '110px', color: styles.arabicColor }}>{result.surahNameArabic}</h2>
                         <p className="mt-4" style={{ fontSize: '40px', color: SUBTLE_COLOR }}>Surah {result.surahNameSimple} — Surah {result.surahNumber}</p>
                         <p className="mt-2" style={{ fontSize: '35px', color: SUBTLE_COLOR }}>Ayah {result.ayahRange}</p>
                     </div>
                     
                     {/* Arabic Text */}
-                    <div dir="rtl" className="space-y-6 mb-12 w-full max-w-6xl">
+                    <div dir="rtl" className="space-y-6 mb-16 w-full max-w-5xl">
                         {result.verses.map((verse) => (
                             <p key={verse.number} className="font-amiri leading-normal text-center" style={{ fontSize: `${styles.arabicSize}px`, color: styles.arabicColor }}>
                                {verse.arabicText} <span style={{ fontSize: `${styles.arabicSize * 0.6}px`, color: INFO_COLOR }}>({verse.number})</span>
@@ -57,7 +57,7 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
                     </div>
 
                     {/* Urdu Translation */}
-                    <div className="w-full max-w-6xl">
+                    <div className="w-full max-w-5xl">
                         <h3 dir="rtl" className="font-nastaliq text-center mb-8" style={{ fontSize: '60px', color: INFO_COLOR }}>اردو ترجمہ</h3>
                         <div dir="rtl" className="space-y-8">
                             {result.verses.map((verse) => (
@@ -70,7 +70,7 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
 
                     {/* Greeting and Divider (Optional) */}
                     {styles.greetingText && (
-                        <div className="text-center mt-24 mb-8 flex flex-col items-center gap-8">
+                        <div className="text-center mt-28 mb-8 flex flex-col items-center gap-8">
                             <LuxuryDividerIcon style={{ color: INFO_COLOR, opacity: 0.6 }} />
                             <p className="font-nastaliq" style={{ fontSize: `${styles.greetingSize}px`, color: styles.greetingColor }}>
                                 {styles.greetingText}

@@ -59,10 +59,11 @@ export const ImageEditor: React.FC<ImageEditorProps> = ({ result, onClose }) => 
         const updateScale = () => {
             if (previewWrapperRef.current) {
                 const { width, height } = previewWrapperRef.current.getBoundingClientRect();
-                const canvasSize = 2048; // Native resolution of the canvas
+                const canvasWidth = 1152; // Native width for 9:16
+                const canvasHeight = 2048; // Native height for 9:16
                 if (width > 0 && height > 0) {
-                    const scaleX = width / canvasSize;
-                    const scaleY = height / canvasSize;
+                    const scaleX = width / canvasWidth;
+                    const scaleY = height / canvasHeight;
                     setScale(Math.min(scaleX, scaleY) * 0.90); // Use 0.90 for a bit more padding
                 }
             }
@@ -80,7 +81,7 @@ export const ImageEditor: React.FC<ImageEditorProps> = ({ result, onClose }) => 
         try {
             const dataUrl = await htmlToImage.toPng(previewCanvasRef.current, {
                 quality: 1,
-                pixelRatio: 1, // Capture at its native 2048x2048 size
+                pixelRatio: 1, // Capture at its native resolution
             });
             const link = document.createElement('a');
             link.download = `quran-${result.surahNumber}-${result.ayahRange.replace('–', '_')}.png`;

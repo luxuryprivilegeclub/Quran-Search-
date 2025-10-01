@@ -87,7 +87,8 @@ export const EditorControls: React.FC<EditorControlsProps> = ({ styles, setStyle
                 </LabeledControl>
                 <div className="flex items-center justify-between gap-4">
                     <label htmlFor="greetingColor" className="text-sm font-medium text-gray-300">Color</label>
-                    <input id="greetingColor" type="color" value={styles.greetingColor} onChange={(e) => handleStyleChange('greetingColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{'--tw-shadow': 'none', 'boxShadow': 'none'}} />
+                    {/* FIX: Removed invalid '--tw-shadow' property which caused a TypeScript error. */}
+                    <input id="greetingColor" type="color" value={styles.greetingColor} onChange={(e) => handleStyleChange('greetingColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{boxShadow: 'none'}} />
                 </div>
                  <LabeledControl label={`Size: ${styles.greetingSize}px`} htmlFor="greetingSize">
                      <input id="greetingSize" type="range" min="30" max="100" value={styles.greetingSize} onChange={(e) => handleStyleChange('greetingSize', parseInt(e.target.value, 10))} className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer" />
@@ -97,11 +98,13 @@ export const EditorControls: React.FC<EditorControlsProps> = ({ styles, setStyle
             <ControlSection title="Text Colors">
                  <div className="flex items-center justify-between gap-4">
                     <label htmlFor="arabicColor" className="text-sm font-medium text-gray-300">Arabic</label>
-                    <input id="arabicColor" type="color" value={styles.arabicColor} onChange={(e) => handleStyleChange('arabicColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{'--tw-shadow': 'none', 'boxShadow': 'none'}} />
+                    {/* FIX: Removed invalid '--tw-shadow' property which caused a TypeScript error. */}
+                    <input id="arabicColor" type="color" value={styles.arabicColor} onChange={(e) => handleStyleChange('arabicColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{boxShadow: 'none'}} />
                  </div>
                  <div className="flex items-center justify-between gap-4">
                     <label htmlFor="urduColor" className="text-sm font-medium text-gray-300">Urdu</label>
-                    <input id="urduColor" type="color" value={styles.urduColor} onChange={(e) => handleStyleChange('urduColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{'--tw-shadow': 'none', 'boxShadow': 'none'}} />
+                    {/* FIX: Removed invalid '--tw-shadow' property which caused a TypeScript error. */}
+                    <input id="urduColor" type="color" value={styles.urduColor} onChange={(e) => handleStyleChange('urduColor', e.target.value)} className="w-10 h-10 bg-transparent rounded-lg cursor-pointer border-none" style={{boxShadow: 'none'}} />
                  </div>
             </ControlSection>
 
