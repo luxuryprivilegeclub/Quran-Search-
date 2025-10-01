@@ -64,7 +64,7 @@ export const ImageEditor: React.FC<ImageEditorProps> = ({ result, onClose }) => 
                 if (width > 0 && height > 0) {
                     const scaleX = width / canvasWidth;
                     const scaleY = height / canvasHeight;
-                    setScale(Math.min(scaleX, scaleY) * 0.90); // Use 0.90 for a bit more padding
+                    setScale(Math.min(scaleX, scaleY) * 0.95); // Use 0.95 for a tighter, cleaner fit
                 }
             }
         };
@@ -98,7 +98,7 @@ export const ImageEditor: React.FC<ImageEditorProps> = ({ result, onClose }) => 
     return (
         <div className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-50 flex flex-col md:flex-row p-2 sm:p-4 gap-4 animate-fade-in" aria-modal="true" role="dialog">
             {/* Preview Area (Placed first for mobile layout) */}
-            <main ref={previewWrapperRef} className="w-full h-[55vh] md:h-full flex-grow flex items-center justify-center bg-gray-800/50 rounded-lg p-4 overflow-hidden">
+            <main ref={previewWrapperRef} className="w-full md:h-full flex-grow flex items-center justify-center bg-gray-800/50 rounded-lg p-4 overflow-hidden min-h-0">
                  <div style={{ transform: `scale(${scale})`, transformOrigin: 'center center', transition: 'transform 0.2s ease-out' }}>
                      <EditorPreview ref={previewCanvasRef} result={result} styles={styles} islamicDate={islamicDate} />
                  </div>

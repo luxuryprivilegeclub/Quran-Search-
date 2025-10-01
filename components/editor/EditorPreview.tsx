@@ -29,7 +29,7 @@ export const EditorPreview = forwardRef<HTMLDivElement, EditorPreviewProps>(({ r
             className="overflow-hidden transition-all duration-300"
         >
              <div
-                className="w-full h-full text-white flex flex-col items-center py-32 px-24"
+                className="w-full h-full text-white flex flex-col items-center py-24 px-16"
             >
                 {/* Bismillah */}
                 <div className="text-center mb-16">
